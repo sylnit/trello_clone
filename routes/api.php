@@ -22,6 +22,6 @@ Route::post('register', [AuthController::class, 'register']);
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/category/{category}/tasks', [CategoryController::class, 'tasks']);
-    Route::resource('/category', [CategoryController::class]);
-    Route::resource('/task', [TaskController::class]);
+    Route::resource('/category', CategoryController::class);
+    Route::resource('/task', TaskController::class);
 });
