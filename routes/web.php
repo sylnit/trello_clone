@@ -14,4 +14,4 @@ use App\Http\Controllers\SinglePageController;
 |
 */
 
-Route::get('/', [SinglePageController::class, 'index']);
+Route::get('/{any}', [SinglePageController::class, 'index'])->where('any', '.*');
